@@ -1,0 +1,92 @@
+.main {
+  overflow-y: scroll;
+  max-height: 280px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    position: relative;
+    font-size: 18px;
+    border-bottom: 1px solid #ededed;
+    margin: 12px 4%;
+    border-radius: 12px;
+    overflow: hidden;
+    & .edit {
+      display: none;
+    }
+    &.editing .edit {
+      display: block;
+    }
+
+    &.editing {
+      border-radius: unset;
+    }
+
+    &.editing .view {
+      display: none;
+    }
+
+    .toggle {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 100%;
+      cursor: pointer;
+      & + label {
+        display: block;
+        padding: 16px 40px 16px 48px;
+        flex: 1;
+        background: #fff url("../img/circle-outline.png") no-repeat;
+        background-size: 20px;
+        background-position: 12px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        &:hover + .destroy {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.completed label {
+      text-decoration: line-through;
+      color: #ccc;
+      background: #fff url("../img/checked.png") no-repeat;
+      background-position: 12px;
+      background-size: 20px;
+    }
+
+    .view {
+      display: flex;
+      align-items: center;
+    }
+
+    .destroy {
+      border: none;
+      outline: none;
+      font-size: 24px;
+      padding: 12px;
+      color: rgba(200, 80, 12, 0.4);
+      cursor: pointer;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      transition: all 0.3s ease;
+      &:hover {
+        color: rgba(255, 80, 12, 0.8);
+        opacity: 1;
+      }
+    }
+  }
+}

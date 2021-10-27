@@ -1,0 +1,43 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  color: #777;
+  font-weight: 400;
+  font-size: 14px;
+  .filters {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    a {
+      display: inline-block;
+      text-decoration: none;
+      padding: 2px 8px;
+      margin: 0 4px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      color: inherit;
+      &.selected {
+        border: 1px solid #aaa;
+      }
+      &:hover {
+        border: 1px solid #aaa;
+      }
+    }
+  }
+  .todo-count strong {
+    font-weight: 400;
+  }
+  .clear-completed {
+    border: none;
+    outline: none;
+    background: #e1e2e7;
+    color: inherit;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
